@@ -57,20 +57,28 @@ namespace Magic_8_Ball
 
             for (int i = 0; i < 1; i++)
             {
-                Console.ReadLine();
-                var randomize = rng.Next(0, ballArray.Length - 1);
-                Console.WriteLine();
-                Console.WriteLine("------------------------------------------------------------------");
-                Console.WriteLine();
-                Console.WriteLine($"         { ballArray[randomize] }                    ");
-                Console.WriteLine();
-                Console.WriteLine("------------------------------------------------------------------");
-                Console.WriteLine("-              HIT ENTER TO ASK ANOTHER QUESTION                 -");
-                Console.WriteLine("------------------------------------------------------------------");
-                Console.WriteLine();
-                
-                goto Start;
+                var userInput = Console.ReadLine();
 
+                if (userInput == "")
+                {
+                    Console.WriteLine("You need to enter a question!");
+                    goto Start;
+                }
+                else
+                {
+                    var randomize = rng.Next(0, ballArray.Length - 1);
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------");
+                    Console.WriteLine();
+                    Console.WriteLine($"         { ballArray[randomize] }                    ");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------");
+                    Console.WriteLine("-              HIT ENTER TO ASK ANOTHER QUESTION                 -");
+                    Console.WriteLine("------------------------------------------------------------------");
+                    Console.WriteLine();
+
+                    goto Start;
+                }
                 
             }
 
