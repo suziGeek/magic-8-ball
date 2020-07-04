@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Magic_8_Ball
 {
@@ -7,6 +8,8 @@ namespace Magic_8_Ball
     {
         static void Main(string[] args)
         {
+           
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("                          88888888888                             ");
@@ -48,6 +51,8 @@ namespace Magic_8_Ball
             ballArray[8] = "            Concentrate and ask again.";
             ballArray[9] = "            Ask again later";
 
+            Start:
+
             var rng = new Random();
 
             for (int i = 0; i < 1; i++)
@@ -60,6 +65,12 @@ namespace Magic_8_Ball
                 Console.WriteLine($"         { ballArray[randomize] }                    ");
                 Console.WriteLine();
                 Console.WriteLine("------------------------------------------------------------------");
+                Console.WriteLine("-              HIT ENTER TO ASK ANOTHER QUESTION                 -");
+                Console.WriteLine("------------------------------------------------------------------");
+                Console.WriteLine();
+                
+                goto Start;
+
                 
             }
 
